@@ -51,53 +51,23 @@ img.seal {
   margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
-  #music-content section {
-    margin: 1rem;
-    max-width: 30%;
-    min-width: 300px; }
-    #music-content section h2 {
-      font-size: 1rem;
-      text-align: center;
-      color: white;
-      font-family: Verdana, Arial, sans-serif;
-      text-shadow: 2px 2px black;
-      padding-bottom: .5rem; }
-      #music-content section h2::first-letter {
-        font-size: 1.5rem;
-        font-family: 'Concert One', cursive;
-        color: #57f9ff; }
-    #music-content section audio {
-      max-width: 100%; }
+          justify-content: center;
+  border: 1px solid fuchsia; }
 
 @media (max-width: 830px) {
   #music-content {
     max-width: 90%; } }
 @media (max-width: 740px) {
   #music-content {
-    max-width: 95%; }
-    #music-content section {
-      max-width: 40%;
-      min-width: 150px; }
-      #music-content section h2 {
-        font-size: .8rem; }
-        #music-content section h2::first-letter {
-          font-size: 1rem; } }
-button {
-  background-color: white; }
+    max-width: 95%; } }
+section {
+  width: 30%;
+  margin: 1%; }
+  section button {
+    width: 100%; }
 
-#playButton2 {
-  height: 60px;
-  width: 60px;
-  border: none;
-  background-size: 50% 50%;
-  background-position: center; }
-
-.play {
-  background: url("../images/play.png") no-repeat; }
-
-.pause {
-  background: url("../images/pause.png") no-repeat; }
+.red {
+  background-color: red; }
 
 @-webkit-keyframes whoosh {
   0% {
