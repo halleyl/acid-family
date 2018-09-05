@@ -80,10 +80,6 @@ section {
       display: inline;
       font-size: .8rem; }
 
-progress {
-  width: 80%;
-  margin: 0 10%; }
-
 i {
   position: relative;
   padding-left: 1rem; }
