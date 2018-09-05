@@ -1,50 +1,84 @@
 let songs = [
   { 
     name: "I'm Hepatitis",
-    url: "./audio/002.mp3" 
+    url: "./audio/002.mp3",
+    playing: false
   },
   { 
     name: "Missing",
-    url: "./audio/003.mp3" 
+    url: "./audio/003.mp3",
+    playing: false
   },
   { 
     name: "Better for Me", 
-    url: "./audio/006.mp3" 
+    url: "./audio/006.mp3",
+    playing: false
   },
   { 
     name: "Black Out", 
-    url: "./audio/007.mp3" 
+    url: "./audio/007.mp3",
+    playing: false
   },
   { 
     name: "I've Got You Babe",
-    url: "./audio/008.mp3" 
+    url: "./audio/008.mp3",
+    playing: false
   },
   { 
     name: "Bed on Fleas", 
-    url: "./audio/009.mp3" 
+    url: "./audio/009.mp3",
+    playing: false
   },
 ]
 
+// Initialize audio element
+var currentURL = document.createElement('audio')
+// Init variable for previously played song
+var lastX
+
 function playSong(x) {
   // Set variables to the audio track clicked
-  var currentURL = new Audio(songs[x].url)
+  currentURL.src = songs[x].url
   var currentSong = songs[x].name
+  var playState = songs[x].playing
+  var buttonState = document.querySelector('.S'+x)
+  var lastButton = document.querySelector('.S'+lastX)
   
-// TODO:
-  // if song is not playing:
-      // play it
-      // change button to 'pause'
-  // if song is playing:
-      // pause it
-      //change button to 'play'
-  // when new song is played, pause any other songs
-      // do this with classes maybe?
-  
-  
-     
-  // Log current song to console
-  console.log('Now playing: '+ currentSong)
-  
-  currentURL.play()
-  
+  // If nothing is playing, play the track that's clicked
+  if (!this.playState) {
+    this.playState = true
+    currentURL.play()
+    buttonState.classList.remove('fa-play')
+    buttonState.classList.add('fa-pause')
+    console.log('(FIRST IF) Now playing: '+ currentSong)
+    lastX = x
+    currentURL.onended = function() {
+      buttonState.classList.remove('fa-pause')
+      buttonState.classList.add('fa-play')
+    }
+  } 
+  // If something else is playing, stop it and play the new one
+    else if (x != lastX) {
+    currentURL.pause()
+    lastButton.classList.remove('fa-pause')
+    lastButton.classList.add('fa-play')
+    currentURL.play()
+    buttonState.classList.remove('fa-play')
+    buttonState.classList.add('fa-pause')
+    console.log('(SECOND IF) Now playing: '+ currentSong)
+    lastX = x
+    currentURL.onended = function() {
+      buttonState.classList.remove('fa-pause')
+      buttonState.classList.add('fa-play')
+    }
+  } 
+  // If you click the playing track, pause it
+    else if (this.playState) {
+    this.playState = false
+    currentURL.pause()
+    buttonState.classList.remove('fa-pause')
+    buttonState.classList.add('fa-play')
+    console.log('(THIRD IF) Paused song: '+ currentSong)
+    lastX = x
+  }
 }

@@ -51,8 +51,7 @@ img.seal {
   margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  border: 1px solid fuchsia; }
+          justify-content: center; }
 
 @media (max-width: 830px) {
   #music-content {
