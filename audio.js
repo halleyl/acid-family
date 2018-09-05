@@ -49,7 +49,9 @@ function playSong(x) {
   var playState = songs[x].playing
   var buttonState = document.querySelector('.S'+x)
   var lastButton = document.querySelector('.S'+lastX)
-  
+  var currentBar = document.getElementById('B'+x)
+  var lastBar = document.getElementById('B'+lastX)
+  var songLength = songs[x].duration
   
   // If nothing is playing, play the track that's clicked
   if (!this.playState) {
@@ -59,9 +61,11 @@ function playSong(x) {
     buttonState.classList.add('fa-pause')
     console.log('Now playing: '+ currentSong)
     lastX = x
+    currentBar.setAttribute("style", `animation: progbar ${songLength}s linear;`)
     currentURL.onended = function() {
       buttonState.classList.remove('fa-pause')
       buttonState.classList.add('fa-play')
+      currentBar.removeAttribute("style")
     }
   } 
   // If something else is playing, stop it and play the new one
@@ -69,14 +73,18 @@ function playSong(x) {
     currentURL.pause()
     lastButton.classList.remove('fa-pause')
     lastButton.classList.add('fa-play')
+    lastBar.removeAttribute("style")
     currentURL.play()
     buttonState.classList.remove('fa-play')
     buttonState.classList.add('fa-pause')
+    currentBar.removeAttribute("style")
     console.log('Now playing: '+ currentSong)
     lastX = x
+    currentBar.setAttribute("style", `animation: progbar ${songLength}s linear;`)
     currentURL.onended = function() {
       buttonState.classList.remove('fa-pause')
       buttonState.classList.add('fa-play')
+      currentBar.removeAttribute("style")
     }
   } 
   // If you click the playing track, pause it
@@ -85,6 +93,7 @@ function playSong(x) {
     currentURL.pause()
     buttonState.classList.remove('fa-pause')
     buttonState.classList.add('fa-play')
+    currentBar.removeAttribute("style")
     console.log('Paused song: '+ currentSong)
     lastX = x
   }

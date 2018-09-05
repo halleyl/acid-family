@@ -75,10 +75,22 @@ section {
       background-color: #fde290; }
     section button:active {
       background-color: gainsboro; }
-    section button p {
+    section button h2 {
       color: black;
       display: inline;
       font-size: .8rem; }
+
+.progress {
+  width: 80%;
+  height: .5rem;
+  margin: .15rem 10%;
+  border: 1px solid darkgray;
+  border-radius: 2rem; }
+  .progress span {
+    display: block;
+    width: 0;
+    height: .5rem;
+    background-color: #c86100; }
 
 i {
   position: relative;
@@ -92,6 +104,21 @@ i {
   margin: .4rem;
   color: #c86100; }
 
+@-webkit-keyframes progbar {
+  0% {
+    width: 0%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 100%; } }
+
+@keyframes progbar {
+  0% {
+    width: 0%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 100%; } }
 @-webkit-keyframes whoosh {
   0% {
     -webkit-transform: translate(-200%, 0);
@@ -125,7 +152,6 @@ i {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
     opacity: 1; } }
-
 @keyframes whoosh {
   0% {
     -webkit-transform: translate(-200%, 0);

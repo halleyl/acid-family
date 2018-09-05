@@ -80,13 +80,29 @@ section {
     &:active {
       background-color: gainsboro;
     }
-    p {
+    h2 {
       color: black;
       display: inline;
       font-size: .8rem;
     }
   }
 }
+
+.progress {
+  width: 80%;
+  height: .5rem;
+  margin: .15rem 10%;
+  border: 1px solid darkgray;
+  border-radius: 2rem;
+  //background-color: gainsboro;
+  span {
+    display: block;
+    width: 0;
+    height: .5rem;
+    background-color: #c86100;
+  }
+}
+
 
 i {
   position: relative;
@@ -101,6 +117,18 @@ i {
 .fa-pause {
   margin: .4rem;
   color: #c86100;
+}
+
+@keyframes progbar {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes whoosh {
