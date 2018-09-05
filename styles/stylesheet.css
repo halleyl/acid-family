@@ -5,7 +5,8 @@
           box-sizing: border-box; }
 
 body {
-  background-image: url("../images/background.jpg"); }
+  background-image: url("../images/background.jpg");
+  font-family: Arial, sans-serif; }
 
 h1 {
   display: -webkit-box;
@@ -47,7 +48,7 @@ img.seal {
           flex-flow: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 80%;
+  max-width: 60%;
   margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -63,10 +64,33 @@ section {
   width: 30%;
   margin: 1%; }
   section button {
-    width: 100%; }
+    outline: none;
+    border: none;
+    background-color: white;
+    width: 100%;
+    border-radius: 5rem;
+    text-align: left;
+    height: 3rem; }
+    section button:hover {
+      background-color: #fde290; }
+    section button:active {
+      background-color: gainsboro; }
+    section button p {
+      color: black;
+      display: inline;
+      font-size: .8rem; }
 
-.red {
-  background-color: red; }
+i {
+  position: relative;
+  padding-left: 1rem; }
+
+.fa-play {
+  margin: .4rem;
+  color: #4403ad; }
+
+.fa-pause {
+  margin: .4rem;
+  color: #c86100; }
 
 @-webkit-keyframes whoosh {
   0% {

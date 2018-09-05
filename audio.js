@@ -50,7 +50,7 @@ function playSong(x) {
     currentURL.play()
     buttonState.classList.remove('fa-play')
     buttonState.classList.add('fa-pause')
-    console.log('(FIRST IF) Now playing: '+ currentSong)
+    console.log('Now playing: '+ currentSong)
     lastX = x
     currentURL.onended = function() {
       buttonState.classList.remove('fa-pause')
@@ -65,7 +65,7 @@ function playSong(x) {
     currentURL.play()
     buttonState.classList.remove('fa-play')
     buttonState.classList.add('fa-pause')
-    console.log('(SECOND IF) Now playing: '+ currentSong)
+    console.log('Now playing: '+ currentSong)
     lastX = x
     currentURL.onended = function() {
       buttonState.classList.remove('fa-pause')
@@ -78,7 +78,7 @@ function playSong(x) {
     currentURL.pause()
     buttonState.classList.remove('fa-pause')
     buttonState.classList.add('fa-play')
-    console.log('(THIRD IF) Paused song: '+ currentSong)
+    console.log('Paused song: '+ currentSong)
     lastX = x
   }
 }

@@ -6,6 +6,7 @@
 
 body {
   background-image: url("../images/background.jpg");
+  font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -45,7 +46,7 @@ img.seal {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  max-width: 80%;
+  max-width: 60%;
   margin: 0 auto;
   justify-content: center;
 }
@@ -66,12 +67,40 @@ section {
   width: 30%;
   margin: 1%;
   button {
+    outline: none;
+    border: none;
+    background-color: white;
     width: 100%;
+    border-radius: 5rem;
+    text-align: left;
+    height: 3rem;
+    &:hover {
+      background-color: #fde290;
+    }
+    &:active {
+      background-color: gainsboro;
+    }
+    p {
+      color: black;
+      display: inline;
+      font-size: .8rem;
+    }
   }
 }
 
-.red {
-  background-color: red;
+i {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.fa-play {
+  margin: .4rem;
+  color: #4403ad;
+}
+
+.fa-pause {
+  margin: .4rem;
+  color: #c86100;
 }
 
 @keyframes whoosh {
