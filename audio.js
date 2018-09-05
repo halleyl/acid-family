@@ -58,7 +58,6 @@ function playSong(x) {
     buttonState.classList.remove('fa-play')
     buttonState.classList.add('fa-pause')
     console.log('Now playing: '+ currentSong)
-    console.log(songLength)
     lastX = x
     currentURL.onended = function() {
       buttonState.classList.remove('fa-pause')
