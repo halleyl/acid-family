@@ -1,30 +1,36 @@
 let songs = [
   { 
+    duration: 32,
     name: "I'm Hepatitis",
     url: "./audio/002.mp3",
     playing: false
   },
   { 
+    duration: 24,
     name: "Missing",
     url: "./audio/003.mp3",
     playing: false
   },
   { 
+    duration: 44,
     name: "Better for Me", 
     url: "./audio/006.mp3",
     playing: false
   },
   { 
+    duration: 64,
     name: "Black Out", 
     url: "./audio/007.mp3",
     playing: false
   },
   { 
+    duration: 39,
     name: "I've Got You Babe",
     url: "./audio/008.mp3",
     playing: false
   },
   { 
+    duration: 32,
     name: "Bed on Fleas", 
     url: "./audio/009.mp3",
     playing: false
@@ -44,6 +50,7 @@ function playSong(x) {
   var buttonState = document.querySelector('.S'+x)
   var lastButton = document.querySelector('.S'+lastX)
   
+  
   // If nothing is playing, play the track that's clicked
   if (!this.playState) {
     this.playState = true
@@ -51,6 +58,7 @@ function playSong(x) {
     buttonState.classList.remove('fa-play')
     buttonState.classList.add('fa-pause')
     console.log('Now playing: '+ currentSong)
+    console.log(songLength)
     lastX = x
     currentURL.onended = function() {
       buttonState.classList.remove('fa-pause')
